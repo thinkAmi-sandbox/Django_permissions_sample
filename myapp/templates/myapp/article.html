@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My Site</title>
+</head>
+<body>
+    <h1>Article Page</h1>
+    <p>Current User: <strong>{{ user }}</strong></p>
+    
+    <div id="main">
+        <p>Public content: <strong>{{ object.public_content }}</strong></p>
+        <p>Private content:
+            {% if user.is_authenticated %} 
+                <strong>{{ object.private_content }}</strong>
+            {% else %}
+                <strong>!! Login required !!</strong>
+            {% endif %}
+        </p>
+        
+        <p>Permission content: 
+            {% if perms.myapp.can_view %}
+                <strong>{{ object.permission_content }}</strong>
+            {% else %}
+                <strong>!! Permission required !!</strong>
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>

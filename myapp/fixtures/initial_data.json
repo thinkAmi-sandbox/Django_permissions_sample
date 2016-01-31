@@ -1,0 +1,11 @@
+[
+    {
+        "model": "myapp.Article",
+        "pk": 1,
+        "fields": {
+            "public_content": "for all users",
+            "private_content": "for logged-in users",
+            "permission_content": "for permission users/groups"
+        }
+    }
+]
